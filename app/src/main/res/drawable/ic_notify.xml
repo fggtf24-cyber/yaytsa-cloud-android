@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- значок в шторке: два яйца, одноцветные -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp" android:height="24dp"
+    android:viewportWidth="24" android:viewportHeight="24">
+    <path android:strokeColor="#FFFFFFFF" android:strokeWidth="1.8"
+        android:pathData="M15.5,3.5C18,3.5 20.5,7 20.5,10.5C20.5,13.3 18.5,15 16,15.2" />
+    <path android:strokeColor="#FFFFFFFF" android:strokeWidth="1.8"
+        android:pathData="M9.5,6C12.6,6 15.5,10.2 15.5,14.2C15.5,17.6 12.9,20.5 9.5,20.5C6.1,20.5 3.5,17.6 3.5,14.2C3.5,10.2 6.4,6 9.5,6Z" />
+</vector>

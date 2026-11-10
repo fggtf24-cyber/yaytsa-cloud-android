@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- тёмный фон сайта сразу при запуске, без белой вспышки -->
+    <style name="Main" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/bg</item>
+        <item name="android:colorAccent">#3B82F6</item>
+    </style>
+    <color name="bg">#0B0B0B</color>
+</resources>
