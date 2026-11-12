@@ -120,7 +120,8 @@ class CheckWorker(ctx: Context, params: WorkerParameters) : Worker(ctx, params) 
                 val f = d.optJSONObject("fields") ?: continue
                 val at = time(f, "lastAt")
                 val seen = f.optJSONObject("seen")?.optJSONObject("mapValue")?.optJSONObject("fields")?.let { time(it, uid) } ?: 0
-                if (str(f, "lastFrom") == uid || at <= since || at <= seen) continue
+                val muted = f.optJSONObject("muted")?.optJSONObject("mapValue")?.optJSONObject("fields")?.let { bool(it, uid) } ?: false
+                if (str(f, "lastFrom") == uid || at <= since || at <= seen || muted) continue
                 val id = d.getString("name").substringAfterLast('/')
                 val group = bool(f, "group")
                 Notifier.show(ctx, "chat/$id", if (group) str(f, "name") else "Новое сообщение", str(f, "lastText"),
