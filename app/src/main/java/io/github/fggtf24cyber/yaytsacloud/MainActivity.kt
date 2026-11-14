@@ -34,9 +34,11 @@ import org.json.JSONObject
  */
 class MainActivity : Activity() {
     companion object {
-        const val LIVE = "https://fggtf24-cyber.github.io/yaytsa-cloud/"
+        const val LIVE = "https://yaytsacloud.art/"
         /** адрес сайта; в отладочной сборке можно подменить: adb shell am start … --es site http://localhost:4173/ */
         var SITE = LIVE
+        /** прежний адрес: GitHub редиректит с него на LIVE, пусть это остаётся внутри приложения */
+        const val OLD = "https://fggtf24-cyber.github.io/yaytsa-cloud/"
         const val EXTRA_HREF = "href"
         /** приложение на экране: новое видно на сайте, уведомление не нужно */
         @Volatile var visible = false
@@ -127,7 +129,7 @@ class MainActivity : Activity() {
         web.loadUrl(SITE + "?t=" + System.currentTimeMillis() + (href?.takeIf { it.startsWith("#") } ?: ""))
     }
 
-    private fun inside(url: String) = url.startsWith(SITE) || url.startsWith("about:") || url.startsWith("data:") || url.startsWith("blob:")
+    private fun inside(url: String) = url.startsWith(SITE) || url.startsWith(OLD) || url.startsWith("about:") || url.startsWith("data:") || url.startsWith("blob:")
 
     private fun openExternal(url: String) {
         val u = Uri.parse(url)
